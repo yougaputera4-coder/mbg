@@ -205,7 +205,7 @@ const gameData = {
         hard: [
             { en: 'Determined', id: 'Having strong desire to achieve something' }, { en: 'Magnificent', id: 'Extremely beautiful or impressive' },
             { en: 'Unexpected', id: 'Happening without warning' }, { en: 'Abandoned', id: 'Left by people and no longer used' },
-            { en: 'SInvestigate', id: 'BerkelanjutTo examine something carefully to find facts' }
+            { en: 'SInvestigate', id: 'To examine something carefully to find facts' }
         ]
     },
     grammar: {
