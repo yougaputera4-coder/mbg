@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>learning english - Game smkn 1 banyuwangi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="assets/logo_smea.png">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <img class="loading-logo" src="assets/f222939335d0ca2c7926e49c29770042.jpg" alt="">
+            </div>
+            <div class="loading-text">english is fun</div>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+            <div class="loading-subtext">Loading games...</div>
+        </div>
+    </div>
+
+    <!-- Confetti Canvas -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <!-- Landing Page -->
+    <div id="landing-page">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-bg">
+                <div class="blob blob-yellow"></div>
+                <div class="blob blob-pink"></div>
+                <div class="blob blob-blue"></div>
+                <div class="blob blob-purple"></div>
+                <div class="blob blob-green"></div>
+            </div>
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-star"></i> Kelas 10
+                </div>
+                <h1 class="hero-title">
+                    <span class="hero-title-main">learning with Mr.amba</span>
+                    <span class="hero-title-sub">English Mastery</span>
+                </h1>
+                <p class="hero-desc">
+                    Platform belajar Bahasa Inggris paling seru! 15 game interaktif untuk menguasai vocabulary, grammar, dan conversation.
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="showLevelSelect()">
+                        <i class="fas fa-play"></i> Mulai Bermain
+                    </button>
+                    <button class="btn btn-secondary" onclick="showLeaderboard()">
+                        <i class="fas fa-trophy"></i> Leaderboard
+                    </button>
+                </div>
+            </div>
+            <div class="hero-floating-icons">
+                <div class="float-icon"><i class="fas fa-book"></i></div>
+                <div class="float-icon"><i class="fas fa-puzzle-piece"></i></div>
+                <div class="float-icon"><i class="fas fa-brain"></i></div>
+                <div class="float-icon"><i class="fas fa-graduation-cap"></i></div>
+                <div class="float-icon"><i class="fas fa-spell-check"></i></div>
+            </div>
+        </section>
+
+        <!-- Marquee Section -->
+        <section class="marquee-section">
+            <div class="marquee-row marquee-left">
+                <span>VOCABULARY • GRAMMAR • READING • LISTENING • SPEAKING • WRITING • </span>
+                <span>VOCABULARY • GRAMMAR • READING • LISTENING • SPEAKING • WRITING • </span>
+            </div>
+            <div class="marquee-row marquee-right">
+                <span>WORD MATCH • GRAMMAR QUIZ • MEMORY CARD • FILL BLANK • SPEED TYPING • </span>
+                <span>WORD MATCH • GRAMMAR QUIZ • MEMORY CARD • FILL BLANK • SPEED TYPING • </span>
+            </div>
+            <div class="marquee-row marquee-left">
+                <span>SYNONYM • ANTONYM • VERB TENSE • LISTENING • SPELLING • CROSSWORD • </span>
+                <span>SYNONYM • ANTONYM • VERB TENSE • LISTENING • SPELLING • CROSSWORD • </span>
+            </div>
+            <div class="marquee-accent"></div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features-section">
+            <div class="container">
+                <h2 class="section-title">Belajar bersama <span class="highlight">Mr.Amba</span></h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon bg-yellow">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                        <h3>15 Game Seru</h3>
+                        <p>Bermain sambil belajar dengan berbagai mini-game edukatif yang menantang.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon bg-pink">
+                            <i class="fas fa-layer-group"></i>
+                        </div>
+                        <h3>3 Level</h3>
+                        <p>Easy, Medium, dan Hard untuk semua kemampuan. Naik level seiring kemajuanmu!</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon bg-blue">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Progress Tracking</h3>
+                        <p>Pantau perkembanganmu dengan progress bar dan skor real-time.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon bg-purple">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h3>Leaderboard</h3>
+                        <p>Bersaing dengan teman-temanmu dan jadi yang terbaik di kelas!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Game Preview Section -->
+        <section class="preview-section">
+            <div class="container">
+                <h2 class="section-title">Pilih <span class="highlight">Game Favoritmu</span></h2>
+                <div class="preview-grid" id="preview-grid">
+                    <!-- Filled by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">SMK Negeri 1 banyuwangi</div>
+                    <p>Belajar Bahasa Inggris dengan cara yang menyenangkan.</p>
+                    <div class="footer-links">
+                        <a href="#" onclick="showLevelSelect(); return false;">Main</a>
+                        <a href="#" onclick="showLeaderboard(); return false;">Leaderboard</a>
+                        <a href="#" onclick="showAbout(); return false;">Tentang</a>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    &copy; 2026 Made by danzz idook. Dibuat untuk siswa Kelas 10.
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Level Selection Modal -->
+    <div id="level-modal" class="modal">
+        <div class="modal-overlay" onclick="hideLevelSelect()"></div>
+        <div class="modal-content glass-panel">
+            <button class="modal-close" onclick="hideLevelSelect()"><i class="fas fa-times"></i></button>
+            <h2 class="modal-title">Pilih Level</h2>
+            <p class="modal-subtitle">Sesuaikan dengan kemampuanmu!</p>
+            <div class="level-buttons">
+                <button class="level-btn level-easy" onclick="startGame('easy')">
+                    <div class="level-icon"><i class="fas fa-leaf"></i></div>
+                    <div class="level-info">
+                        <div class="level-name">EASY</div>
+                        <div class="level-desc">Santai & Menyenangkan</div>
+                    </div>
+                    <div class="level-arrow"><i class="fas fa-chevron-right"></i></div>
+                </button>
+                <button class="level-btn level-medium" onclick="startGame('medium')">
+                    <div class="level-icon"><i class="fas fa-fire"></i></div>
+                    <div class="level-info">
+                        <div class="level-name">MEDIUM</div>
+                        <div class="level-desc">Tantangan Menarik</div>
+                    </div>
+                    <div class="level-arrow"><i class="fas fa-chevron-right"></i></div>
+                </button>
+                <button class="level-btn level-hard" onclick="startGame('hard')">
+                    <div class="level-icon"><i class="fas fa-bolt"></i></div>
+                    <div class="level-info">
+                        <div class="level-name">HARD</div>
+                        <div class="level-desc">Kobe Bureni! 🔥</div>
+                    </div>
+                    <div class="level-arrow"><i class="fas fa-chevron-right"></i></div>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Leaderboard Modal -->
+    <div id="leaderboard-modal" class="modal">
+        <div class="modal-overlay" onclick="hideLeaderboard()"></div>
+        <div class="modal-content glass-panel">
+            <button class="modal-close" onclick="hideLeaderboard()"><i class="fas fa-times"></i></button>
+            <h2 class="modal-title"><i class="fas fa-trophy"></i> Leaderboard</h2>
+            <div class="leaderboard-tabs">
+                <button class="lb-tab active" onclick="switchLbTab('easy')">Easy</button>
+                <button class="lb-tab" onclick="switchLbTab('medium')">Medium</button>
+                <button class="lb-tab" onclick="switchLbTab('hard')">Hard</button>
+            </div>
+            <div class="leaderboard-list" id="leaderboard-list">
+                <!-- Filled by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- About Modal -->
+    <div id="about-modal" class="modal">
+        <div class="modal-overlay" onclick="hideAbout()"></div>
+        <div class="modal-content glass-panel">
+            <button class="modal-close" onclick="hideAbout()"><i class="fas fa-times"></i></button>
+            <h2 class="modal-title">About Our Website</h2>
+            <div class="about-content">
+                <p>Mr.Amba school adalah platform belajar Bahasa Inggris interaktif yang dirancang khusus untuk siswa kelas 10 SMA di Indonesia.</p>
+                <p>Dengan 15 game edukatif yang menyenangkan, kamu bisa belajar vocabulary, grammar, reading, listening, dan conversation dengan cara yang tidak membosankan!</p>
+                <div class="about-stats">
+                    <div class="about-stat">
+                        <div class="stat-num">15</div>
+                        <div class="stat-label">Game</div>
+                    </div>
+                    <div class="about-stat">
+                        <div class="stat-num">3</div>
+                        <div class="stat-label">Level</div>
+                    </div>
+                    <div class="about-stat">
+                        <div class="stat-num">100+</div>
+                        <div class="stat-label">Soal</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>leerning english - Game smkn 1 banyuwangi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="assets/logo_smea.png">
+</head>
+<body class="game-body">
+    <!-- Confetti Canvas -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <!-- Sound Toggle -->
+    <button class="sound-toggle" onclick="toggleSound()" id="sound-toggle">
+        <i class="fas fa-volume-up"></i>
+    </button>
+
+    <!-- Game Hub Navigation -->
+    <nav class="game-nav">
+        <div class="nav-brand" onclick="goHome()">
+            <span class="nav-logo">
+                <img class="nav-logo" src="assets/f222939335d0ca2c7926e49c29770042.jpg" alt="">
+            </span>
+            <span class="nav-title">Mr.Amba school</span>
+        </div>
+        <div class="nav-info">
+            <div class="nav-level" id="nav-level">EASY</div>
+            <div class="nav-score">
+                <i class="fas fa-star"></i>
+                <span id="nav-score">0</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Game Hub Main -->
+    <div id="game-hub">
+        <div class="hub-header">
+            <h1 class="hub-title">Pilih Game</h1>
+            <p class="hub-subtitle">Level: <span id="hub-level">Easy</span></p>
+            <div class="overall-progress">
+                <div class="progress-label">Total Progress</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="overall-progress"></div>
+                </div>
+                <div class="progress-percent" id="overall-percent">0%</div>
+            </div>
+        </div>
+
+        <div class="games-container" id="games-grid">
+            <!-- Games filled by JS -->
+        </div>
+    </div>
+
+    <!-- Game Arena (where individual games are played) -->
+    <div id="game-arena" class="hidden">
+        <div class="arena-header">
+            <button class="arena-back" onclick="backToHub()">
+                <i class="fas fa-arrow-left"></i> Kembali
+            </button>
+            <div class="arena-title" id="arena-title">Game Title</div>
+            <div class="arena-stats">
+                <div class="arena-stat">
+                    <i class="fas fa-star"></i>
+                    <span id="arena-score">0</span>
+                </div>
+                <div class="arena-stat" id="arena-timer-wrap">
+                    <i class="fas fa-clock"></i>
+                    <span id="arena-timer">60</span>
+                </div>
+            </div>
+        </div>
+        <div class="arena-content" id="arena-content">
+            <!-- Game content injected here -->
+        </div>
+    </div>
+
+    <!-- Game Result Modal -->
+    <div id="result-modal" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content glass-panel result-panel">
+            <div class="result-icon" id="result-icon">
+                <i class="fas fa-trophy"></i>
+            </div>
+            <h2 class="result-title" id="result-title">Selesai!</h2>
+            <div class="result-stats">
+                <div class="result-stat">
+                    <div class="result-label">Skor</div>
+                    <div class="result-value" id="result-score">0</div>
+                </div>
+                <div class="result-stat">
+                    <div class="result-label">Benar</div>
+                    <div class="result-value" id="result-correct">0</div>
+                </div>
+                <div class="result-stat">
+                    <div class="result-label">Akurasi</div>
+                    <div class="result-value" id="result-accuracy">0%</div>
+                </div>
+            </div>
+            <div class="result-message" id="result-message">Kerja bagus!</div>
+            <div class="result-buttons">
+                <button class="btn btn-primary" onclick="replayGame()">
+                    <i class="fas fa-redo"></i> Main Lagi
+                </button>
+                <button class="btn btn-secondary" onclick="backToHub()">
+                    <i class="fas fa-th"></i> Pilih Game
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
